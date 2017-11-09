@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript" src="/loop-practice-3.js"></script>
+        <pre>
+var students = [{
+ name: 'Liz',
+ age: 25,
+ city: 'Boulder'
+},{
+ name: 'Meghan',
+ age: 27,
+ city: 'Denver'
+},{
+ name: 'Trent',
+ age: 32,
+ city: 'Boulder'
+},{
+ name: 'Chelsea',
+ age: 24,
+ city: 'Boulder'
+},{
+ name: 'Amir',
+ age: 18,
+ city: 'Denver'
+}];
+        </pre>
+
+        <div>
+            <h1><em>Problem:</em></h1>
+            <pre>
+                25
+                27
+                32
+                24
+                18
+                </pre>
+            <div><em>Solution:</em></div>
+            <pre>
+for(i =0; i < 5; i++){
+    console.log(students[i]['age']);
+}
+            </pre>
+        </div>
+
+        <div>
+            <h1><em>Problem:</em></h1>
+            <pre>
+                Liz
+                Boulder Meghan
+                Denver Trent
+                Boulder Chelsea
+                Boulder Amir
+                Denver
+            </pre>
+            <div><em>Solution:</em></div>
+            <pre>
+for ( var i = 0; i < students.length - 1; i++){
+
+    // Taking care of the first word, Liz's name, followed by a comma
+    if(students[i].name === 'Liz') {
+        console.log(students[i].name);
+    }
+    // Console logging the middle names and cities
+    console.log(`${students[i].city} ${students[i+1].name}`);
+
+    // Taking care of the last word, 'Denver'
+    if(i === 3){
+        console.log('Denver');
+    }
+
+}
+
+           </pre>
+        </div>
+
+        <div>
+            <h1><em>Problem:</em></h1>
+            <pre>
+                Liz is from Boulder
+                Trent is from Boulder
+                Chelsea is from Boulder
+            </pre>
+            <div><em>Solution:</em></div>
+            <pre>
+// Looping through the students array
+for( var i = 0; i < students.length; i++ ) {
+
+    // If a student has 'Boulder' as their city property, log their name and 'is from Boulder'
+    if(students[i].city === 'Boulder'){
+        console.log(`${students[i].name} is from Boulder`);
+    }
+
+}
+
+            </pre>
+        </div>
+
+        <div>
+            <h1><em>Problem:</em></h1>
+            <pre>
+                Meghan is older than 25
+                Trent is older than 25
+            </pre>
+            <div><em>Solution:</em></div>
+            <pre>
+// Looping through the students array
+for( var i = 0; i < students.length; i++ ) {
+
+    // If a student has aga property greater than 25, log their name and 'is older than 25'
+    if(students[i].age > 25){
+        console.log(`${students[i].name} is older than 25`);
+    }
+
+}
+
+            </pre>
+        </div>
+
+    </body>
+</html>
